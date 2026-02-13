@@ -7,13 +7,28 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Evamor Africa CMS</title>
+    <script is:inline>
+      (() => {
+        const hash = window.location.hash || "";
+        const malformedInviteHash =
+          hash.startsWith("#/invite_token=") ||
+          hash.startsWith("#/recovery_token=") ||
+          hash.startsWith("#/confirmation_token=");
+
+        if (malformedInviteHash) {
+          // Netlify Identity expects #invite_token=... (without "/").
+          window.location.replace(`${window.location.pathname}#${hash.slice(2)}`);
+        }
+      })();
+    </script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
   </head>
   <body>
     <script is:inline>
       const hash = window.location.hash || "";
-      const hasInviteToken = hash.includes("invite_token=");
+      const hasInviteToken =
+        hash.includes("invite_token=") || hash.includes("/invite_token=");
 
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", (user) => {

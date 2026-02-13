@@ -3,13 +3,29 @@
   <head>
     <meta charset="utf-8" />
     <title>Evamor Africa CMS</title>
+    <script>
+      (function () {
+        var hash = window.location.hash || "";
+        var malformedInviteHash =
+          hash.indexOf("#/invite_token=") === 0 ||
+          hash.indexOf("#/recovery_token=") === 0 ||
+          hash.indexOf("#/confirmation_token=") === 0;
+
+        if (malformedInviteHash) {
+          // Netlify Identity expects #invite_token=... (without "/").
+          window.location.replace(window.location.pathname + "#" + hash.slice(2));
+        }
+      })();
+    </script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
   </head>
   <body>
     <script>
       var hash = window.location.hash || "";
-      var hasInviteToken = hash.indexOf("invite_token=") !== -1;
+      var hasInviteToken =
+        hash.indexOf("invite_token=") !== -1 ||
+        hash.indexOf("/invite_token=") !== -1;
 
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", function (user) {
