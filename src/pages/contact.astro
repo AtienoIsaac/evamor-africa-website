@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout title="Contact – Evamor Africa">
+
+  <h1>Contact Us</h1>
+
+  <p>
+    We welcome inquiries from partners, supporters, volunteers, and
+    organizations interested in working with Evamor Africa. Reach out to
+    learn more about our work or explore opportunities for collaboration.
+  </p>
+
+  <section class="contact-grid">
+    <div>
+      <h2>Get in Touch</h2>
+
+      <p>
+        If you would like to partner with us, support our programs, or learn
+        more about our initiatives, please use the form or contact us
+        directly.
+      </p>
+
+      <ul class="contact-details">
+        <li><strong>Email:</strong> info@evamorafrica.org</li>
+        <li><strong>Location:</strong> Africa</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Send a Message</h2>
+
+      <form class="contact-form">
+        <label>
+          Name
+          <input type="text" name="name" required />
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+
+        <label>
+          Message
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+</Layout>
+

@@ -1,0 +1,288 @@
+---
+const { title = "Evamor Africa" } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="nav-container">
+        <a href="/" class="logo">Evamor Africa</a>
+
+        <nav>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/what-we-do">What We Do</a></li>
+            <li><a href="/our-team">Our Team</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div>
+        © {new Date().getFullYear()} Evamor Africa
+      </div>
+    </footer>
+
+    <!-- ✅ SCOPED CSS GOES HERE -->
+    <style>
+      :root {
+        --evamor-green: #1F7A63;
+        --evamor-green-light: #E6F4F1;
+        --evamor-green-dark: #145A4A;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --border-light: #e2e8f0;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Inter', system-ui, sans-serif;
+        background: #f8fafc;
+        color: var(--text-main);
+      }
+
+      header {
+        background: #ffffff;
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      .nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+      .logo {
+        font-weight: 600;
+        font-size: 1.125rem;
+        color: var(--evamor-green);
+        text-decoration: none;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+
+      nav a:hover {
+        color: var(--evamor-green);
+      }
+
+      main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px 24px;
+}
+
+
+      footer {
+        background: #ffffff;
+        border-top: 1px solid var(--border-light);
+        font-size: 0.875rem;
+        color: var(--text-muted);
+      }
+
+      footer div {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 16px 24px;
+      }
+	  h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+.focus-areas {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+.focus-areas article {
+  padding-top: 8px;
+}
+
+.focus-areas h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.focus-areas p {
+  margin-bottom: 12px;
+}
+
+.read-more {
+  font-size: 0.875rem;
+  color: var(--evamor-green);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+.content-list {
+  margin: 24px 0 32px;
+  padding-left: 20px;
+}
+
+.content-list li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--evamor-green);
+  text-decoration: underline;
+}
+.gallery-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.gallery-grid figure {
+  margin: 0;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+.gallery-grid figcaption {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.contact-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 48px;
+}
+
+.contact-details {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+}
+
+.contact-details li {
+  margin-bottom: 8px;
+  color: var(--text-muted);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-top: 6px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--evamor-green);
+}
+
+.contact-form button {
+  margin-top: 8px;
+  align-self: flex-start;
+  background: var(--evamor-green);
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: var(--evamor-green-dark);
+}
+
+
+
+    </style>
+  </body>
+</html>
