@@ -7,7 +7,20 @@ const { title = "Evamor Africa" } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script is:inline>
+      (() => {
+        const hash = window.location.hash || "";
+        const hasIdentityToken =
+          hash.includes("invite_token=") ||
+          hash.includes("recovery_token=") ||
+          hash.includes("confirmation_token=");
+
+        if (hasIdentityToken && !window.location.pathname.startsWith("/admin")) {
+          window.location.replace(`/admin/${hash}`);
+        }
+      })();
+    </script>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
