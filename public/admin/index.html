@@ -8,8 +8,17 @@
   </head>
   <body>
     <script>
+      var hash = window.location.hash || "";
+      var hasInviteToken = hash.indexOf("invite_token=") !== -1;
+
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", function (user) {
+          if (hasInviteToken) {
+            // Force account creation flow when opening an invite link.
+            window.netlifyIdentity.open("signup");
+            return;
+          }
+
           if (!user) {
             window.netlifyIdentity.on("login", function () {
               document.location.href = "/admin/";
