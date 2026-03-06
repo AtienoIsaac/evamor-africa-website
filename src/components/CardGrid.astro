@@ -1,0 +1,30 @@
+---
+interface Item {
+  title: string;
+  description: string;
+  href?: string;
+  cta?: string;
+}
+
+interface Props {
+  items: Item[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="grid-cards">
+  {
+    items.map((item) => (
+      <article class="card">
+        <h3>{item.title}</h3>
+        <p>{item.description}</p>
+        {item.href && (
+          <a class="read-more" href={item.href}>
+            {item.cta || "Read more"}
+          </a>
+        )}
+      </article>
+    ))
+  }
+</section>

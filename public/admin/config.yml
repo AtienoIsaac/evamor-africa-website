@@ -9,16 +9,44 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - label: "About Page"
-        name: "about"
-        file: "src/pages/about.md"
+      - label: "Natural Resource Conservation"
+        name: "natural-resource-conservation"
+        file: "src/pages/what-we-do/natural-resource-conservation.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
 
-      - label: "What We Do Overview"
-        name: "what-we-do"
-        file: "src/pages/what-we-do.md"
+      - label: "Climate-Smart Agriculture"
+        name: "climate-smart-agriculture"
+        file: "src/pages/what-we-do/climate-smart-agriculture.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Eco-Tourism"
+        name: "eco-tourism"
+        file: "src/pages/what-we-do/eco-tourism.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Sustainable Transport"
+        name: "sustainable-transport"
+        file: "src/pages/what-we-do/sustainable-transport.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Environmental Rights and Advocacy"
+        name: "environmental-rights-advocacy"
+        file: "src/pages/what-we-do/environmental-rights-advocacy.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Green Energy and Green Enterprising"
+        name: "green-energy-enterprising"
+        file: "src/pages/what-we-do/green-energy-enterprising.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }

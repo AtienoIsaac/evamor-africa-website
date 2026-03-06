@@ -1,11 +1,36 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
 ---
-<Layout title="Our Team – Evamor Africa">
-  <h1 class="text-3xl font-bold mb-4">Our Team</h1>
 
-  <p class="text-slate-600 max-w-2xl">
-    Our team is made up of passionate professionals, volunteers,
-    and partners working together to create meaningful change.
-  </p>
+<Layout title="Our Team | Evamor Africa">
+  <PageHero
+    label="People"
+    title="A multidisciplinary team committed to climate and community outcomes"
+    description="Our team combines field experience, advocacy expertise, and local partnerships to deliver practical environmental solutions."
+  />
+
+  <section class="grid-cards">
+    <article class="card">
+      <h3>Leadership and Strategy</h3>
+      <p>
+        Guides program direction, partnerships, and institutional growth to
+        ensure mission-aligned delivery.
+      </p>
+    </article>
+    <article class="card">
+      <h3>Program and Field Teams</h3>
+      <p>
+        Leads implementation across conservation, climate-smart agriculture,
+        transport, and advocacy initiatives.
+      </p>
+    </article>
+    <article class="card">
+      <h3>Community and Partners</h3>
+      <p>
+        Works with local leaders, youth groups, and institutions to sustain
+        impact beyond individual projects.
+      </p>
+    </article>
+  </section>
 </Layout>

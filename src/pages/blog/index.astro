@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/PageHero.astro";
+import CardGrid from "../../components/CardGrid.astro";
+
+const posts = [
+  {
+    title: "Make a Statement in Support of the Environment",
+    description:
+      "A spotlight article on practical ways communities and institutions can support environmental action.",
+    href: "/blog/make-a-statement-support-of-the-environment",
+    cta: "Read article",
+  },
+];
+---
+
+<Layout title="Blog | Evamor Africa">
+  <PageHero
+    label="Insights"
+    title="News, updates, and field perspectives"
+    description="Stories from our programs and communities, plus practical insights on sustainability, climate resilience, and advocacy."
+  />
+  <CardGrid items={posts} />
+</Layout>

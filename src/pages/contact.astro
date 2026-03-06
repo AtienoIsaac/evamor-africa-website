@@ -1,55 +1,45 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
 ---
-<Layout title="Contact – Evamor Africa">
 
-  <h1>Contact Us</h1>
-
-  <p>
-    We welcome inquiries from partners, supporters, volunteers, and
-    organizations interested in working with Evamor Africa. Reach out to
-    learn more about our work or explore opportunities for collaboration.
-  </p>
+<Layout title="Contact | Evamor Africa">
+  <PageHero
+    label="Contact"
+    title="Partner, support, or collaborate with Evamor Africa"
+    description="We welcome inquiries from institutions, communities, volunteers, and funders interested in environmental action and resilient development."
+  />
 
   <section class="contact-grid">
     <div>
-      <h2>Get in Touch</h2>
-
-      <p>
-        If you would like to partner with us, support our programs, or learn
-        more about our initiatives, please use the form or contact us
-        directly.
-      </p>
-
+      <h2>Reach Us</h2>
       <ul class="contact-details">
+        <li><strong>Address:</strong> Mammy's Court Milimani, Kisumu, Kenya</li>
         <li><strong>Email:</strong> info@evamorafrica.org</li>
-        <li><strong>Location:</strong> Africa</li>
+        <li><strong>Phone:</strong> +254 719 660 577</li>
+        <li><strong>Phone:</strong> +254 795 888 629</li>
+        <li><strong>Hours:</strong> Mon-Fri 08:00-17:00</li>
       </ul>
     </div>
 
     <div>
       <h2>Send a Message</h2>
-
-      <form class="contact-form">
+      <form class="contact-form" name="contact" method="post" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
         <label>
           Name
           <input type="text" name="name" required />
         </label>
-
         <label>
           Email
           <input type="email" name="email" required />
         </label>
-
         <label>
           Message
           <textarea name="message" rows="5" required></textarea>
         </label>
-
         <button type="submit">Send Message</button>
       </form>
     </div>
   </section>
-
 </Layout>
-

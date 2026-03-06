@@ -1,12 +1,53 @@
 ---
 import Layout from "../layouts/Layout.astro";
----
-<Layout title="Evamor Africa">
-  <h1 class="text-4xl font-bold mb-4">
-    Evamor Africa
-  </h1>
+import PageHero from "../components/PageHero.astro";
+import CardGrid from "../components/CardGrid.astro";
 
-  <p class="text-slate-600 text-lg max-w-2xl">
-    Website revamp in progress. We’re building a faster, cleaner, more accessible platform.
-  </p>
+const pillars = [
+  {
+    title: "Natural Resource Conservation",
+    description:
+      "Protecting ecosystems while supporting communities whose livelihoods depend on natural resources.",
+    href: "/what-we-do/natural-resource-conservation",
+  },
+  {
+    title: "Climate-Smart Agriculture",
+    description:
+      "Strengthening food security through adaptive, low-impact farming and farmer capacity building.",
+    href: "/what-we-do/climate-smart-agriculture",
+  },
+  {
+    title: "Eco-Tourism and Green Livelihoods",
+    description:
+      "Promoting tourism and enterprise models that conserve biodiversity and create local income.",
+    href: "/what-we-do/eco-tourism",
+  },
+];
+
+const highlights = [
+  { title: "10+", description: "Integrated programs and campaigns running across conservation and climate action." },
+  { title: "200+", description: "Community members and youth reached through awareness, skills, and participation activities." },
+  { title: "6", description: "Primary thematic areas including transport, advocacy, agriculture, and green enterprise." },
+];
+---
+
+<Layout title="Evamor Africa | Climate, Conservation, and Community Resilience">
+  <PageHero
+    label="Evamor Africa"
+    title="Environmental action with communities at the center"
+    description="We design and deliver initiatives that connect climate resilience, ecosystem restoration, and inclusive livelihoods across Africa."
+  />
+
+  <section class="grid-cards">
+    {
+      highlights.map((item) => (
+        <article class="card">
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </article>
+      ))
+    }
+  </section>
+
+  <CardGrid items={pillars} />
 </Layout>

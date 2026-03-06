@@ -1,93 +1,66 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import CardGrid from "../components/CardGrid.astro";
+
+const programs = [
+  {
+    title: "Natural Resource Conservation",
+    description:
+      "Protecting ecosystems and supporting communities that depend on healthy natural environments.",
+    href: "/what-we-do/natural-resource-conservation",
+  },
+  {
+    title: "Climate-Smart Agriculture",
+    description:
+      "Building resilient food systems with sustainable farming methods and local capacity support.",
+    href: "/what-we-do/climate-smart-agriculture",
+  },
+  {
+    title: "Eco-Tourism",
+    description:
+      "Conservation-linked tourism models that grow local income while preserving biodiversity.",
+    href: "/what-we-do/eco-tourism",
+  },
+  {
+    title: "Sustainable Transport",
+    description:
+      "Low-emission mobility approaches and climate-resilient transport planning for communities.",
+    href: "/what-we-do/sustainable-transport",
+  },
+  {
+    title: "Environmental Rights and Advocacy",
+    description:
+      "Policy and community advocacy to defend environmental rights and sustainable governance.",
+    href: "/what-we-do/environmental-rights-advocacy",
+  },
+  {
+    title: "Green Energy and Green Enterprising",
+    description:
+      "Supporting clean energy adoption and green entrepreneurship for durable local economies.",
+    href: "/what-we-do/green-energy-enterprising",
+  },
+  {
+    title: "Evamor Eco-Couriers",
+    description:
+      "A cleaner logistics concept connecting sustainable delivery with livelihood opportunities.",
+    href: "/what-we-do/evamor-eco-couriers",
+  },
+  {
+    title: "Green City Campaign",
+    description:
+      "City-focused sustainability action through greening, awareness, and multi-stakeholder engagement.",
+    href: "/what-we-do/green-city-campaign",
+  },
+];
 ---
-<Layout title="What We Do – Evamor Africa">
 
-<h1>What We Do</h1>
+<Layout title="What We Do | Evamor Africa">
+  <PageHero
+    label="Programs"
+    title="Programs designed for impact, resilience, and green growth"
+    description="From conservation and climate-smart agriculture to transport and advocacy, our work connects environmental protection with practical opportunities for communities."
+  />
 
-<p>
-  Evamor Africa works at the intersection of environmental protection,
-  climate resilience, and community development. Our programs are designed
-  to support sustainable livelihoods while safeguarding natural ecosystems.
-</p>
-
-<section class="focus-areas">
-  <article>
-    <h2>Natural Resource Conservation</h2>
-    <p>
-      We promote the responsible management and protection of natural
-      resources to support biodiversity, ecosystem health, and long-term
-      environmental sustainability.
-    </p>
-    <a
-  href="/what-we-do/natural-resource-conservation"
-  class="read-more"
->
-  Read more
-</a>
-
-  </article>
-
-  <article>
-    <h2>Climate-Smart Agriculture</h2>
-    <p>
-      Our climate-smart agriculture initiatives support farming practices
-      that adapt to climate change, improve food security, and reduce
-      environmental impact.
-    </p>
-    <a href="/what-we-do/climate-smart-agriculture" class="read-more">
-  Read more
-</a>
-
-  </article>
-
-  <article>
-    <h2>Eco-Tourism</h2>
-    <p>
-      We support eco-tourism models that conserve the environment while
-      creating sustainable economic opportunities for local communities.
-    </p>
-    <a href="/what-we-do/eco-tourism" class="read-more">
-  Read more
-</a>
-
-  </article>
-
-  <article>
-    <h2>Sustainable Transport</h2>
-    <p>
-      Our work in sustainable transport focuses on promoting low-emission
-      mobility solutions and resilient infrastructure that can withstand
-      climate-related challenges.
-    </p>
-    <a href="/what-we-do/sustainable-transport" class="read-more">
-  Read more
-</a>
-
-  </article>
-
-  <article>
-    <h2>Environmental Rights and Advocacy</h2>
-    <p>
-      We advocate for environmental rights through policy engagement,
-      community awareness, and actions that protect forests, land, and
-      biodiversity.
-    </p>
-    <a href="/what-we-do/environmental-rights-advocacy" class="read-more">
-  Read more
-</a>
-
-  </article>
-
-  <article>
-    <h2>Green Energy and Green Enterprising</h2>
-    <p>
-      We promote renewable energy solutions and support green enterprises
-      that create jobs while reducing environmental harm.
-    </p>
-   <a href="/what-we-do/green-energy-enterprising" class="read-more">
-  Read more
-</a>
-
-  </article>
-</section>
+  <CardGrid items={programs} />
+</Layout>

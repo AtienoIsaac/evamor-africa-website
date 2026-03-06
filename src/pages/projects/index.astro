@@ -1,0 +1,36 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/PageHero.astro";
+import CardGrid from "../../components/CardGrid.astro";
+
+const projects = [
+  {
+    title: "Akingli Community Tourism",
+    description:
+      "Community-led tourism with environmental safeguards and local enterprise support.",
+    href: "/projects/akingli-community-tourism",
+  },
+  {
+    title: "Mbeme Community Restoration Project",
+    description:
+      "Landscape and ecosystem restoration coordinated with local communities and stakeholders.",
+    href: "/projects/mbeme-community-restoration-project",
+  },
+  {
+    title: "Green City Campaign",
+    description:
+      "Urban sustainability initiative focused on cleaner neighborhoods and climate action.",
+    href: "/what-we-do/green-city-campaign",
+    cta: "View campaign page",
+  },
+];
+---
+
+<Layout title="Projects | Evamor Africa">
+  <PageHero
+    label="Portfolio"
+    title="Projects in Motion"
+    description="A growing portfolio of on-the-ground work across restoration, community enterprise, urban sustainability, and climate resilience."
+  />
+  <CardGrid items={projects} />
+</Layout>

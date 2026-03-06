@@ -1,11 +1,69 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
 ---
-<Layout title="About Us – Evamor Africa">
-  <h1 class="text-3xl font-bold mb-4">About Us</h1>
 
-  <p class="text-slate-600 max-w-2xl">
-    Evamor Africa is a mission-driven organization focused on community
-    empowerment, sustainable development, and long-term impact.
-  </p>
+<Layout title="About | Evamor Africa">
+  <PageHero
+    label="About Evamor"
+    title="Building sustainable and resilient communities in Africa"
+    description="Evamor Africa is a youth-led environmental organization registered in 2017 and operational since 2021, working across conservation, climate action, and community development."
+  />
+
+  <section class="grid-cards">
+    <article class="card">
+      <h3>Our Vision</h3>
+      <p>
+        Restoring a peaceful coexistence between nature and humanity.
+      </p>
+    </article>
+    <article class="card">
+      <h3>Our Mission</h3>
+      <p>
+        To contribute to building a society that is responsible for and
+        concerned with the environment through education, innovation, projects,
+        research, and capacity building.
+      </p>
+    </article>
+  </section>
+
+  <section class="grid-cards">
+    <article class="card">
+      <h3>Core Objectives</h3>
+      <ul class="content-list">
+        <li>Promote sustainable tourism and conservation-linked enterprise.</li>
+        <li>Advance climate adaptation in farming and local food systems.</li>
+        <li>Support green energy, green jobs, and circular economy solutions.</li>
+        <li>Defend environmental rights through advocacy and awareness.</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>Rationale</h3>
+      <p>
+        Our work is grounded in the belief that communities protect nature more
+        effectively when conservation is connected to social and economic value.
+      </p>
+    </article>
+    <article class="card">
+      <h3>Our Approach</h3>
+      <p>
+        We work through partnerships with communities, institutions, and local
+        leaders. Each project combines practical implementation with capacity
+        building and policy engagement so impact can last beyond a single cycle.
+      </p>
+    </article>
+    <article class="card">
+      <h3>Where We Operate</h3>
+      <p>
+        Evamor Africa is headquartered in Kisumu, Kenya, with programs and
+        collaborations across multiple community settings.
+      </p>
+      <ul class="content-list">
+        <li>Mammy's Court Milimani, Kisumu, Kenya</li>
+        <li>+254 719 660 577</li>
+        <li>+254 795 888 629</li>
+        <li>info@evamorafrica.org</li>
+      </ul>
+    </article>
+  </section>
 </Layout>
