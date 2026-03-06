@@ -3,8 +3,41 @@
   <head>
     <meta charset="utf-8" />
     <title>Evamor Africa CMS</title>
+    <script>
+      (function () {
+        var hash = window.location.hash || "";
+        var malformedIdentityHash = hash.indexOf("#/") === 0;
+
+        if (malformedIdentityHash) {
+          window.location.replace(window.location.pathname + "#" + hash.slice(2));
+        }
+      })();
+    </script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
   </head>
-  <body></body>
+  <body>
+    <script>
+      var hash = window.location.hash || "";
+      var hasInviteFlowToken =
+        hash.indexOf("invite_token=") !== -1 ||
+        hash.indexOf("recovery_token=") !== -1 ||
+        hash.indexOf("confirmation_token=") !== -1;
+
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function (user) {
+          if (hasInviteFlowToken) {
+            window.netlifyIdentity.open("signup");
+            return;
+          }
+
+          if (!user) {
+            window.netlifyIdentity.on("login", function () {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
